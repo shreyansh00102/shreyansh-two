@@ -135,15 +135,24 @@
         <!-- ===== RESULT SECTION ===== -->
         <section class="result-section" id="resultSection" style="display: none;">
             
-            <!-- Result Top Controls (Bilingual Language Switcher) -->
+            <!-- Result Top Controls (Bilingual Language Switcher & Scan Another Top Button) -->
             <div class="result-controls">
                 <div class="threat-badge-container">
                     <span class="threat-level-badge" id="threatLevelBadge">LOW RISK</span>
                 </div>
-                <div class="lang-selector">
-                    <span class="lang-label">Explanation:</span>
-                    <button class="lang-btn active" id="langEnBtn" onclick="setLanguage('en')">English</button>
-                    <button class="lang-btn" id="langHiBtn" onclick="setLanguage('hi')">Hinglish</button>
+                <div class="controls-right">
+                    <button class="scan-another-btn-top" onclick="resetUI()">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/>
+                        </svg>
+                        <span class="trans-en">Scan Another</span>
+                        <span class="trans-hi" style="display: none;">Naya Link Check Karein</span>
+                    </button>
+                    <div class="lang-selector">
+                        <span class="lang-label">Explanation:</span>
+                        <button class="lang-btn active" id="langEnBtn" onclick="setLanguage('en')">English</button>
+                        <button class="lang-btn" id="langHiBtn" onclick="setLanguage('hi')">Hinglish</button>
+                    </div>
                 </div>
             </div>
 

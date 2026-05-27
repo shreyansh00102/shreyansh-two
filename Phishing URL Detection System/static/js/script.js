@@ -260,7 +260,7 @@ async function predictClientSide(url) {
                 title_en: "URL is extremely long",
                 title_hi: "URL Bahut Lambi Hai",
                 detail_en: `URL contains ${url_length} characters. Phishers use long URLs to hide the actual malicious domain and mimic trusted links.`,
-                detail_hi: `URL mein {url_length} letters hain. Phishers lambi URLs ka use karte hain taaki asli domain name chhup sake aur link trusted lage.`,
+                detail_hi: `URL mein ${url_length} letters hain. Phishers lambi URLs ka use karte hain taaki asli domain name chhup sake aur link trusted lage.`,
                 severity: "high",
                 highlight_type: "length",
                 highlight_target: url
