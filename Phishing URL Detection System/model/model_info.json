@@ -1,0 +1,52 @@
+{
+  "accuracy": 0.8924163758617755,
+  "total_samples": 58745,
+  "kaggle_samples": 58645,
+  "sample_urls": 100,
+  "safe_samples": 28048,
+  "phishing_samples": 30697,
+  "n_features": 15,
+  "n_estimators": 200,
+  "max_depth": 15,
+  "dataset_source": "Kaggle - GregaVrbancic/Phishing-Dataset (58,645 URLs) + Custom samples (100 URLs)",
+  "feature_names": [
+    "url_length",
+    "has_ip_address",
+    "num_dots",
+    "has_at_symbol",
+    "has_double_slash",
+    "has_dash_in_domain",
+    "num_subdomains",
+    "is_https",
+    "url_depth",
+    "uses_shortener",
+    "num_special_chars",
+    "domain_length",
+    "num_digits_in_domain",
+    "has_suspicious_words",
+    "has_url_encoding"
+  ],
+  "feature_importances": {
+    "url_length": 0.33772416748365264,
+    "has_ip_address": 0.0028939318732125576,
+    "num_dots": 0.03409661394100447,
+    "has_at_symbol": 0.005450991592172425,
+    "has_double_slash": 0.035325764112233544,
+    "has_dash_in_domain": 0.010216520544288496,
+    "num_subdomains": 0.07693200019946445,
+    "is_https": 0.014496811898772064,
+    "url_depth": 0.34708961053518805,
+    "uses_shortener": 0.008026360258711574,
+    "num_special_chars": 0.039668090729521654,
+    "domain_length": 0.07450071731325017,
+    "num_digits_in_domain": 7.593944122310585e-05,
+    "has_suspicious_words": 0.011687374402560617,
+    "has_url_encoding": 0.0018151056747442568
+  },
+  "confusion_matrix": {
+    "true_safe": 4988,
+    "false_phishing": 622,
+    "false_safe": 642,
+    "true_phishing": 5497
+  }
+}

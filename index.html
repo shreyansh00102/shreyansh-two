@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreyansh | Software Developer</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="menuOverlay"></div>
+
+    <!-- Background Animated Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">Shreyansh<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Experience</a></li>
+                <li><a href="#contact">Connect</a></li>
+                <li class="mobile-nav-action">
+                    <a href="assets/Shreyansh_Yadav_Resume.pdf" class="btn-resume"
+                        download="Shreyansh_Yadav_Resume.pdf"><i class="fas fa-file-download"></i> Download Resume</a>
+                </li>
+            </ul>
+            <div class="nav-action">
+                <a href="assets/Shreyansh_Yadav_Resume.pdf" class="btn-resume" download="Shreyansh_Yadav_Resume.pdf"><i
+                        class="fas fa-file-download"></i> Download Resume</a>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero section-spacing">
+        <div class="container hero-container">
+            <div class="hero-content reveal">
+                <p class="greeting">Hey, I am <span class="highlight-name">Shreyansh</span></p>
+                <h1 class="hero-title">Full Stack<br><span id="dynamic-text"></span></h1>
+                <p class="description">
+                    A passionate Software Developer and B.Tech student with a strong foundation in modern web
+                    technologies. I love transforming complex problems into elegant, user-friendly solutions.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">Hire me</a>
+                    <a href="mailto:shreyansh00102@gmail.com" class="btn btn-icon" title="Email Me"><i
+                            class="far fa-envelope"></i></a>
+                </div>
+
+                <div class="hero-glass-card">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p>Dedicated to writing clean, efficient code and constantly exploring new tools to build better
+                        digital experiences.</p>
+                    <div class="author">
+                        <img src="https://ui-avatars.com/api/?name=S+Y&background=ea580c&color=fff&rounded=true"
+                            alt="Shreyansh">
+                        <div class="author-info">
+                            <h4>Shreyansh Yadav</h4>
+                            <span>Software Developer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image-wrapper reveal">
+                <!-- Glowing 4 or abstract bg -->
+                <div class="hero-glow-bg"></div>
+                <img src="assets/profile.png" alt="Shreyansh Photo" class="hero-image">
+
+                <!-- Floating Tech Icons -->
+                <div class="floating-icon icon-html"><i class="fab fa-html5"></i></div>
+                <div class="floating-icon icon-css"><i class="fab fa-css3-alt"></i></div>
+                <div class="floating-icon icon-js"><i class="fab fa-js"></i></div>
+                <div class="floating-icon icon-react"><i class="fab fa-react"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+        </div>
+        <span class="scroll-text">SCROLL</span>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about section-spacing">
+        <div class="container">
+            <h2 class="section-title reveal">About <span>Me</span></h2>
+            <div class="about-content reveal">
+                <div class="about-text glass-card">
+                    <p>
+                        I am a passionate <strong>Software Developer</strong> currently pursuing my <strong>B.Tech (3rd
+                            Year)</strong>.
+                    </p>
+                    <p>
+                        I study at <strong>Kamala Nehru Institute of Physical and Social Sciences (KNIPSS)</strong> in
+                        Fridipur. I love exploring new technologies, solving complex problems, and creating
+                        user-friendly applications that leave a lasting impact.
+                    </p>
+                    <p>
+                        When I'm not writing code, you can find me learning about modern web architectures, UI/UX
+                        designs, and advanced animations.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>B.Tech</h3>
+                            <p>3rd Year Student</p>
+                        </div>
+                        <div class="stat">
+                            <h3>Developer</h3>
+                            <p>Software Engineering</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education section-spacing">
+        <div class="container">
+            <span class="edu-badge reveal">MY JOURNEY</span>
+            <h2 class="section-title reveal">My <span>Education</span></h2>
+            <p class="edu-subtitle reveal">The academic milestones that shaped my developer journey.</p>
+
+            <div class="edu-timeline">
+                <!-- Item 1 — B.Tech -->
+                <div class="edu-card-wrapper reveal">
+                    <div class="edu-orb">
+                        <div class="edu-orb-core"></div>
+                        <div class="edu-orb-ring"></div>
+                    </div>
+                    <div class="edu-card">
+                        <div class="edu-card-header">
+                            <span class="edu-date">2024 – 2028</span>
+                            <span class="edu-ongoing-badge">Ongoing</span>
+                        </div>
+                        <h3 class="edu-title">Bachelor of Technology — Computer Science</h3>
+                        <p class="edu-school">Kamla Nehru Institute of Physical and Social Science (KNIPSS), Sultanpur
+                        </p>
+                        <p class="edu-desc">Pursuing a 4-year undergraduate degree in Computer Science, building
+                            expertise in software engineering, data structures, algorithms, and full-stack web
+                            development.</p>
+                        <div class="edu-tags">
+                            <span>B.Tech</span>
+                            <span>Computer Science</span>
+                            <span>2024–2028</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decorative Separator -->
+                <div class="edu-separator">
+                    <div class="edu-sep-circle"></div>
+                </div>
+
+                <!-- Item 2 — 12th -->
+                <div class="edu-card-wrapper reveal">
+                    <div class="edu-orb">
+                        <div class="edu-orb-core"></div>
+                        <div class="edu-orb-ring"></div>
+                    </div>
+                    <div class="edu-card">
+                        <div class="edu-card-header">
+                            <span class="edu-date">2022 – 2023</span>
+                        </div>
+                        <h3 class="edu-title">Class 12th — Intermediate</h3>
+                        <p class="edu-school">St. Xavier's High School, Sultanpur</p>
+                        <p class="edu-desc">Completed senior secondary education, strengthening analytical thinking and
+                            problem-solving skills.</p>
+                        <div class="edu-tags">
+                            <span>Intermediate</span>
+                            <span>Class 12th</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decorative Separator -->
+                <div class="edu-separator">
+                    <div class="edu-sep-circle"></div>
+                </div>
+
+                <!-- Item 3 — 10th -->
+                <div class="edu-card-wrapper reveal">
+                    <div class="edu-orb">
+                        <div class="edu-orb-core"></div>
+                        <div class="edu-orb-ring"></div>
+                    </div>
+                    <div class="edu-card">
+                        <div class="edu-card-header">
+                            <span class="edu-date">2020 – 2021</span>
+                        </div>
+                        <h3 class="edu-title">Class 10th — High School</h3>
+                        <p class="edu-school">St. Xavier's High School, Sultanpur</p>
+                        <p class="edu-desc">Completed secondary education with a strong academic record, sparking an
+                            early interest in technology and programming.</p>
+                        <div class="edu-tags">
+                            <span>High School</span>
+                            <span>Class 10th</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section-spacing">
+        <div class="container">
+            <span class="skills-badge reveal">WHAT I DO</span>
+            <h2 class="section-title reveal">My <span>Skills</span></h2>
+            <p class="skills-subtitle reveal">A curated set of technologies I work with to bring ideas to life.</p>
+            <div class="skills-grid">
+                <!-- HTML / CSS -->
+                <div class="skill-card-v2 reveal">
+                    <div class="skill-icon-badge" style="background: rgba(227, 79, 38, 0.15);">
+                        <i class="fab fa-css3-alt" style="color: #e34f26;"></i>
+                    </div>
+                    <h3>HTML / CSS</h3>
+                    <p class="skill-desc">Pixel-perfect responsive layouts, animations &amp; modern CSS features.</p>
+                    <div class="skill-progress-wrapper">
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill skill-progress-yellow" style="width: 95%;"></div>
+                        </div>
+                        <span class="skill-percent">95%</span>
+                    </div>
+                </div>
+                <!-- JavaScript -->
+                <div class="skill-card-v2 reveal">
+                    <div class="skill-icon-badge" style="background: rgba(247, 223, 30, 0.15);">
+                        <i class="fab fa-js" style="color: #f7df1e;"></i>
+                    </div>
+                    <h3>JavaScript</h3>
+                    <p class="skill-desc">ES6+, async/await, functional programming &amp; DOM mastery.</p>
+                    <div class="skill-progress-wrapper">
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill" style="width: 92%;"></div>
+                        </div>
+                        <span class="skill-percent">92%</span>
+                    </div>
+                </div>
+                <!-- Node.js -->
+                <div class="skill-card-v2 reveal">
+                    <div class="skill-icon-badge" style="background: rgba(104, 159, 56, 0.15);">
+                        <i class="fab fa-node-js" style="color: #689f38;"></i>
+                    </div>
+                    <h3>Node.js</h3>
+                    <p class="skill-desc">REST APIs, microservices, real-time apps with Express &amp; Socket.io.</p>
+                    <div class="skill-progress-wrapper">
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill" style="width: 85%;"></div>
+                        </div>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                </div>
+                <!-- React.js -->
+                <div class="skill-card-v2 reveal">
+                    <div class="skill-icon-badge" style="background: rgba(97, 218, 251, 0.15);">
+                        <i class="fab fa-react" style="color: #61dafb;"></i>
+                    </div>
+                    <h3>React.js</h3>
+                    <p class="skill-desc">Building dynamic UIs with hooks, context, and modern patterns.</p>
+                    <div class="skill-progress-wrapper">
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill" style="width: 90%;"></div>
+                        </div>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                </div>
+                <!-- Python -->
+                <div class="skill-card-v2 reveal">
+                    <div class="skill-icon-badge" style="background: rgba(55, 118, 171, 0.15);">
+                        <i class="fab fa-python" style="color: #3776ab;"></i>
+                    </div>
+                    <h3>Python</h3>
+                    <p class="skill-desc">Data processing, automation, Django &amp; Flask backend services.</p>
+                    <div class="skill-progress-wrapper">
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill skill-progress-red" style="width: 78%;"></div>
+                        </div>
+                        <span class="skill-percent">78%</span>
+                    </div>
+                </div>
+                <!-- MongoDB -->
+                <div class="skill-card-v2 reveal">
+                    <div class="skill-icon-badge" style="background: rgba(77, 179, 61, 0.15);">
+                        <i class="fas fa-leaf" style="color: #4db33d;"></i>
+                    </div>
+                    <h3>MongoDB</h3>
+                    <p class="skill-desc">NoSQL data modeling, aggregation pipelines &amp; Atlas cloud.</p>
+                    <div class="skill-progress-wrapper">
+                        <div class="skill-progress-bar">
+                            <div class="skill-progress-fill" style="width: 80%;"></div>
+                        </div>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section-spacing">
+        <div class="container">
+            <h2 class="section-title reveal">Featured <span>Projects</span></h2>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <div class="project-card glass-card reveal">
+                    <div class="project-img-placeholder" style="background: linear-gradient(135deg, #00d4ff, #8b5cf6);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Phishing URL Detection</h3>
+                        <p>Machine Learning powered cybersecurity tool to analyze and detect phishing URLs in real-time with 89.2% accuracy.
+                        </p>
+                        <div class="tags">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>Machine Learning</span>
+                            <span>JavaScript</span>
+                        </div>
+                        <a href="Phishing URL Detection System/index.html" class="btn btn-small" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card glass-card reveal">
+                    <div class="project-img-placeholder" style="background: linear-gradient(135deg, #ec4899, #8b5cf6);">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Finance Tracker</h3>
+                        <p>An interactive dashboard to track expenses and visualize financial data with beautiful
+                            charts.</p>
+                        <div class="tags">
+                            <span>JavaScript</span>
+                            <span>Chart.js</span>
+                            <span>CSS3</span>
+                        </div>
+                        <a href="#" class="btn btn-small">Live Demo</a>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card glass-card reveal">
+                    <div class="project-img-placeholder" style="background: linear-gradient(135deg, #10b981, #3b82f6);">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <div class="project-info">
+                        <h3>Weather App</h3>
+                        <p>A real-time weather application using third-party APIs to deliver accurate forecasts
+                            globally.</p>
+                        <div class="tags">
+                            <span>API</span>
+                            <span>HTML5</span>
+                            <span>Async JS</span>
+                        </div>
+                        <a href="#" class="btn btn-small">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-spacing">
+        <div class="container">
+            <h2 class="section-title reveal">Get In <span>Touch</span></h2>
+            <div class="contact-wrapper reveal">
+                <div class="contact-info glass-card">
+                    <h3>Contact Information</h3>
+                    <p>Feel free to reach out for collaborations or just a friendly chat.</p>
+                    <ul class="info-list">
+                        <li><i class="fas fa-map-marker-alt"></i> KNIPSS, Faridpur</li>
+                        <li><i class="fas fa-envelope"></i><a
+                                href="mailto:shreyansh00102@gmail.com">shreyansh00102@gmail.com</a></li>
+                        <li><i class="fas fa-phone-alt"></i><a href="tel:+917007706755">+91 70077 06755</a></li>
+                    </ul>
+                    <div class="social-links">
+                        <a href="https://github.com/shreyansh00102"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/shreyansh-yadav-1b9a6a325/"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://x.com/Shreyansh00102"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/shre_3939/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form glass-card">
+                    <form id="contactForm">
+                        <div class="input-group">
+                            <input type="text" id="name" required placeholder=" ">
+                            <label for="name">Your Name</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" id="email" required placeholder=" ">
+                            <label for="email">Your Email</label>
+                        </div>
+                        <div class="input-group">
+                            <textarea id="message" rows="5" required placeholder=" "></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Send Message <i
+                                class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="year"></span> Shreyansh Yadav. All rights reserved.</p>
+            <p class="made-with">Designed with <i class="fas fa-heart"></i> and <i class="fas fa-coffee"></i></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
