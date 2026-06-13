@@ -813,7 +813,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.8rem;
     max-width: 800px;
     margin: 0 auto;
     padding: 0 1.5rem;
@@ -828,20 +828,32 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.3rem;
+    gap: 0.5rem 0.2rem;
     margin-top: 0.5rem;
-    padding-top: 0.8rem;
+    padding-top: 1rem;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
+    width: 100%;
 }
 .footer-nav a {
     color: var(--text-muted);
     text-decoration: none;
     font-size: 0.85rem;
-    padding: 0.2rem 0.4rem;
+    padding: 0.25rem 0.6rem;
     transition: color 0.3s ease;
+    position: relative;
+}
+.footer-nav a:not(:last-child)::after {
+    content: '|';
+    position: absolute;
+    right: -0.3rem;
+    color: rgba(255, 255, 255, 0.15);
+    pointer-events: none;
 }
 .footer-nav a:hover {
     color: var(--accent);
+}
+.made-with {
+    font-size: 0.85rem;
 }
 .made-with i.fa-heart {
     color: #ef4444;
@@ -1058,27 +1070,30 @@ body.menu-open {
 
     /* Footer mobile fix */
     footer {
-        padding: 2rem 1rem;
-        margin-top: 3rem;
+        padding: 1.5rem 1rem;
+        margin-top: 2rem;
     }
     .footer-content {
-        gap: 0.8rem;
+        gap: 1rem;
         padding: 0 1rem;
     }
     .footer-content p {
-        font-size: 0.8rem;
+        font-size: 0.78rem;
         line-height: 1.5;
     }
     .footer-nav {
-        gap: 0.2rem;
-        font-size: 0.78rem;
+        gap: 0.4rem;
+        padding-top: 0.8rem;
     }
     .footer-nav a {
-        font-size: 0.78rem;
-        padding: 0.3rem 0.3rem;
+        font-size: 0.75rem;
+        padding: 0.2rem 0.5rem;
+    }
+    .footer-nav a:not(:last-child)::after {
+        display: none;
     }
     .made-with {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 
     /* Education mobile */
