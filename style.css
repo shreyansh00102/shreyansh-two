@@ -24,6 +24,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -802,64 +803,265 @@ nav.scrolled {
 
 /* --- Footer --- */
 footer {
-    padding: 2.5rem 0;
+    position: relative;
+    padding: 4rem 0 3rem;
     text-align: center;
-    border-top: 1px solid var(--glass-border);
-    margin-top: 2.5rem;
-    background: rgba(15, 23, 42, 0.8);
-    backdrop-filter: blur(5px);
+    margin-top: 4rem;
+    background: linear-gradient(to top, rgba(15, 10, 8, 0.98), rgba(26, 15, 10, 0.9));
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    overflow: hidden;
 }
+
+/* Glowing Accent Top Border Animation */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(234, 88, 12, 0.2), 
+        var(--primary), 
+        var(--accent), 
+        var(--primary), 
+        rgba(234, 88, 12, 0.2), 
+        transparent
+    );
+    background-size: 200% 100%;
+    animation: borderGlow 8s linear infinite;
+    z-index: 2;
+}
+
+@keyframes borderGlow {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+}
+
+/* Ambient glow orb behind the footer */
+.footer-glow-container {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 250px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.15;
+    filter: blur(80px);
+}
+.footer-glow-orb {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center, var(--primary), transparent 70%);
+}
+
 .footer-content {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.8rem;
-    max-width: 800px;
+    gap: 1.5rem;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 1.5rem;
+    z-index: 3;
 }
-.footer-content p {
+
+/* Footer Logo with gradient text & slide hover */
+.footer-logo {
+    margin-bottom: 0.2rem;
+}
+.footer-logo .logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #fff;
+    cursor: default;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+.footer-logo .logo-text:hover {
+    transform: scale(1.05);
+}
+.footer-logo .logo-highlight {
+    color: var(--primary);
+    background: linear-gradient(135deg, var(--accent), var(--primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+}
+
+/* Social icons with floating effect and glowing hover */
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 0.2rem;
+}
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     color: var(--text-muted);
-    font-size: 0.9rem;
-    margin: 0;
-    line-height: 1.6;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
 }
+.social-icon::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+.social-icon:hover {
+    color: #fff;
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: 0 5px 15px var(--primary-glow);
+}
+.social-icon:hover::before {
+    opacity: 1;
+}
+/* Individual icon brand hover colors */
+.social-icon:hover i.fa-github { color: #fff; }
+.social-icon:hover i.fa-linkedin-in { color: #0077b5; }
+.social-icon:hover i.fa-twitter { color: #1da1f2; }
+.social-icon:hover i.fa-instagram { color: #e1306c; }
+.social-icon:hover i.fa-envelope { color: var(--accent); }
+
+/* Navigation links with animated sliding underlines */
 .footer-nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 0.5rem 0.2rem;
-    margin-top: 0.5rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    gap: 0.5rem 1.8rem;
+    padding: 0.8rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     width: 100%;
+    max-width: 650px;
 }
 .footer-nav a {
     color: var(--text-muted);
     text-decoration: none;
-    font-size: 0.85rem;
-    padding: 0.25rem 0.6rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.25rem 0;
     transition: color 0.3s ease;
     position: relative;
 }
-.footer-nav a:not(:last-child)::after {
-    content: '|';
+.footer-nav a::after {
+    content: '';
     position: absolute;
-    right: -0.3rem;
-    color: rgba(255, 255, 255, 0.15);
-    pointer-events: none;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    transition: width 0.3s ease;
 }
 .footer-nav a:hover {
-    color: var(--accent);
+    color: #fff;
 }
+.footer-nav a:hover::after {
+    width: 100%;
+}
+
+.footer-tagline {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    opacity: 0.6;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+/* Made with pulsing and spinning micro-animations */
 .made-with {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
 }
-.made-with i.fa-heart {
+.made-with i.fa-heart.beat-icon {
     color: #ef4444;
+    animation: heartBeat 1.5s infinite;
 }
-.made-with i.fa-coffee {
+.made-with i.fa-coffee.steam-icon {
     color: #d97706;
+    animation: coffeeSteam 3s infinite ease-in-out;
+    transform-origin: bottom center;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.2); }
+    30% { transform: scale(1); }
+    45% { transform: scale(1.15); }
+    60% { transform: scale(1); }
+}
+
+@keyframes coffeeSteam {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.8; }
+    50% { transform: translateY(-3px) rotate(3deg) scaleY(1.05); opacity: 1; filter: drop-shadow(0 0 2px rgba(217, 119, 6, 0.4)); }
+}
+
+.copyright {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+    margin-top: 0.2rem;
+}
+
+/* Elegant Scroll-to-Top Button */
+.back-to-top {
+    position: absolute;
+    bottom: 3rem;
+    right: 3rem;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--text-muted);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 5;
+}
+.back-to-top i {
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+.back-to-top:hover {
+    color: #fff;
+    background: var(--primary);
+    border-color: var(--primary);
+    box-shadow: 0 4px 15px var(--primary-glow);
+    transform: translateY(-5px);
+}
+.back-to-top:hover i {
+    transform: translateY(-2px);
 }
 
 /* --- Scroll Reveal Animations --- */
@@ -971,6 +1173,7 @@ body.menu-open {
         position: fixed;
         top: 0;
         right: -100%;
+        visibility: hidden;
         width: 80%;
         max-width: 320px;
         height: 100vh;
@@ -985,11 +1188,12 @@ body.menu-open {
         border-left: 1px solid rgba(255, 255, 255, 0.08);
         box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
         z-index: 1001;
-        transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), visibility 0.4s;
         overflow-y: auto;
     }
     .nav-links.active {
         right: 0;
+        visibility: visible;
     }
 
     .nav-links li {
@@ -1043,9 +1247,7 @@ body.menu-open {
         max-width: 280px;
     }
     .floating-icon {
-        width: 45px;
-        height: 45px;
-        font-size: 1.4rem;
+        display: none;
     }
     
     /* About stats mobile fix */
@@ -1070,30 +1272,39 @@ body.menu-open {
 
     /* Footer mobile fix */
     footer {
-        padding: 1.5rem 1rem;
-        margin-top: 2rem;
+        padding: 3rem 1rem 2rem;
+        margin-top: 3rem;
     }
     .footer-content {
-        gap: 1rem;
+        gap: 1.2rem;
         padding: 0 1rem;
     }
-    .footer-content p {
-        font-size: 0.78rem;
-        line-height: 1.5;
-    }
     .footer-nav {
-        gap: 0.4rem;
-        padding-top: 0.8rem;
+        gap: 0.8rem 1rem;
+        padding: 0.6rem 0;
     }
     .footer-nav a {
-        font-size: 0.75rem;
-        padding: 0.2rem 0.5rem;
+        font-size: 0.85rem;
     }
-    .footer-nav a:not(:last-child)::after {
-        display: none;
+    .footer-socials {
+        gap: 0.9rem;
+    }
+    .social-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 1rem;
+    }
+    .back-to-top {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin: 1rem auto 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
     }
     .made-with {
-        font-size: 0.75rem;
+        font-size: 0.82rem;
     }
 
     /* Education mobile */
