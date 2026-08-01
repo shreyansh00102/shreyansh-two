@@ -220,9 +220,45 @@
         ]
     }
     </script>
+    <!-- JSON-LD: FAQPage for Search Console Rich Snippets -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Who is the best Full Stack Software Developer in Sultanpur, Uttar Pradesh?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Shreyansh Yadav is one of the top Full Stack Developers in Sultanpur, Uttar Pradesh. Pursuing B.Tech Computer Science at KNIPSS Sultanpur, he specializes in React.js, Node.js, Python, MongoDB, and MERN stack software development."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What web development services does Shreyansh Yadav provide?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Shreyansh Yadav offers full stack web application development, responsive website design, RESTful API development, frontend React development, backend Node.js and Python microservices, and database design for clients in Sultanpur, UP and worldwide."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How can I contact Shreyansh Yadav for freelance projects or software work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can reach Shreyansh Yadav via email at shreyansh00102@gmail.com, phone/WhatsApp at +91 70077 06755, or connect via GitHub (shreyansh00102) and LinkedIn."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body itemscope itemtype="https://schema.org/WebPage">
+    <!-- Glowing Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-outline" id="cursorOutline"></div>
     <noscript>
         <div style="padding: 20px; background: #ea580c; color: white; text-align: center;">
             Please enable JavaScript to view this portfolio website properly. Shreyansh Yadav, Full Stack Developer in Sultanpur, UP.
@@ -355,6 +391,43 @@
                             <p>Uttar Pradesh, India</p>
                         </div>
                     </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Animated Statistics Section -->
+    <section id="stats" class="stats-section section-spacing">
+        <div class="container">
+            <div class="stats-grid reveal">
+                <div class="stat-card glass-card" data-tilt>
+                    <div class="stat-icon"><i class="fas fa-code-branch"></i></div>
+                    <div class="stat-number-wrapper">
+                        <h3 class="counter" data-target="15">0</h3><span class="plus">+</span>
+                    </div>
+                    <p class="stat-label">Projects Built</p>
+                </div>
+                <div class="stat-card glass-card" data-tilt>
+                    <div class="stat-icon"><i class="fas fa-layer-group"></i></div>
+                    <div class="stat-number-wrapper">
+                        <h3 class="counter" data-target="12">0</h3><span class="plus">+</span>
+                    </div>
+                    <p class="stat-label">Tech Stack Mastered</p>
+                </div>
+                <div class="stat-card glass-card" data-tilt>
+                    <div class="stat-icon"><i class="fas fa-terminal"></i></div>
+                    <div class="stat-number-wrapper">
+                        <h3 class="counter" data-target="450">0</h3><span class="plus">+</span>
+                    </div>
+                    <p class="stat-label">Code Commits</p>
+                </div>
+                <div class="stat-card glass-card" data-tilt>
+                    <div class="stat-icon"><i class="fas fa-smile-beam"></i></div>
+                    <div class="stat-number-wrapper">
+                        <h3 class="counter" data-target="100">0</h3><span class="plus">%</span>
+                    </div>
+                    <p class="stat-label">Client Satisfaction</p>
                 </div>
             </div>
         </div>
@@ -454,9 +527,18 @@
             <span class="skills-badge reveal">WHAT I DO</span>
             <h2 class="section-title reveal">My <span>Skills</span></h2>
             <p class="skills-subtitle reveal">A curated set of technologies I work with to bring ideas to life.</p>
+            
+            <!-- Skill Category Filters -->
+            <div class="skills-filter-wrapper reveal">
+                <button class="skill-filter-btn active" data-filter="all"><i class="fas fa-th-large"></i> All Skills</button>
+                <button class="skill-filter-btn" data-filter="frontend"><i class="fas fa-code"></i> Frontend</button>
+                <button class="skill-filter-btn" data-filter="backend"><i class="fas fa-server"></i> Backend</button>
+                <button class="skill-filter-btn" data-filter="database"><i class="fas fa-database"></i> Database & Tools</button>
+            </div>
+
             <div class="skills-grid">
                 <!-- HTML / CSS -->
-                <div class="skill-card-v2 reveal">
+                <div class="skill-card-v2 reveal" data-category="frontend" data-tilt>
                     <div class="skill-icon-badge" style="background: rgba(227, 79, 38, 0.15);">
                         <i class="fab fa-css3-alt" style="color: #e34f26;"></i>
                     </div>
@@ -470,7 +552,7 @@
                     </div>
                 </div>
                 <!-- JavaScript -->
-                <div class="skill-card-v2 reveal">
+                <div class="skill-card-v2 reveal" data-category="frontend" data-tilt>
                     <div class="skill-icon-badge" style="background: rgba(247, 223, 30, 0.15);">
                         <i class="fab fa-js" style="color: #f7df1e;"></i>
                     </div>
@@ -484,7 +566,7 @@
                     </div>
                 </div>
                 <!-- Node.js -->
-                <div class="skill-card-v2 reveal">
+                <div class="skill-card-v2 reveal" data-category="backend" data-tilt>
                     <div class="skill-icon-badge" style="background: rgba(104, 159, 56, 0.15);">
                         <i class="fab fa-node-js" style="color: #689f38;"></i>
                     </div>
@@ -498,7 +580,7 @@
                     </div>
                 </div>
                 <!-- React.js -->
-                <div class="skill-card-v2 reveal">
+                <div class="skill-card-v2 reveal" data-category="frontend" data-tilt>
                     <div class="skill-icon-badge" style="background: rgba(97, 218, 251, 0.15);">
                         <i class="fab fa-react" style="color: #61dafb;"></i>
                     </div>
@@ -512,7 +594,7 @@
                     </div>
                 </div>
                 <!-- Python -->
-                <div class="skill-card-v2 reveal">
+                <div class="skill-card-v2 reveal" data-category="backend" data-tilt>
                     <div class="skill-icon-badge" style="background: rgba(55, 118, 171, 0.15);">
                         <i class="fab fa-python" style="color: #3776ab;"></i>
                     </div>
@@ -526,7 +608,7 @@
                     </div>
                 </div>
                 <!-- MongoDB -->
-                <div class="skill-card-v2 reveal">
+                <div class="skill-card-v2 reveal" data-category="database" data-tilt>
                     <div class="skill-icon-badge" style="background: rgba(77, 179, 61, 0.15);">
                         <i class="fas fa-leaf" style="color: #4db33d;"></i>
                     </div>
@@ -549,7 +631,7 @@
             <h2 class="section-title reveal">Featured <span>Projects</span></h2>
             <div class="projects-grid">
                 <!-- Project 1 -->
-                <div class="project-card glass-card reveal">
+                <div class="project-card glass-card reveal" data-tilt>
                     <div class="project-img-placeholder" style="background: linear-gradient(135deg, #00d4ff, #8b5cf6);">
                         <i class="fas fa-shield-alt"></i>
                     </div>
@@ -563,11 +645,14 @@
                             <span>Machine Learning</span>
                             <span>JavaScript</span>
                         </div>
-                        <a href="Phishing URL Detection System/index.html" class="btn btn-small" target="_blank">Live Demo</a>
+                        <div class="project-card-actions">
+                            <a href="Phishing URL Detection System/index.html" class="btn btn-small" target="_blank">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                            <button class="btn btn-small btn-secondary view-project-btn" data-project="phishing"><i class="fas fa-info-circle"></i> Specs</button>
+                        </div>
                     </div>
                 </div>
                 <!-- Project 2 -->
-                <div class="project-card glass-card reveal">
+                <div class="project-card glass-card reveal" data-tilt>
                     <div class="project-img-placeholder" style="background: linear-gradient(135deg, #ec4899, #8b5cf6);">
                         <i class="fas fa-chart-line"></i>
                     </div>
@@ -580,11 +665,14 @@
                             <span>Chart.js</span>
                             <span>CSS3</span>
                         </div>
-                        <a href="#" class="btn btn-small">Live Demo</a>
+                        <div class="project-card-actions">
+                            <a href="#" class="btn btn-small">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                            <button class="btn btn-small btn-secondary view-project-btn" data-project="finance"><i class="fas fa-info-circle"></i> Specs</button>
+                        </div>
                     </div>
                 </div>
                 <!-- Project 3 -->
-                <div class="project-card glass-card reveal">
+                <div class="project-card glass-card reveal" data-tilt>
                     <div class="project-img-placeholder" style="background: linear-gradient(135deg, #10b981, #3b82f6);">
                         <i class="fas fa-cloud-sun"></i>
                     </div>
@@ -597,7 +685,10 @@
                             <span>HTML5</span>
                             <span>Async JS</span>
                         </div>
-                        <a href="#" class="btn btn-small">Live Demo</a>
+                        <div class="project-card-actions">
+                            <a href="#" class="btn btn-small">Live Demo <i class="fas fa-external-link-alt"></i></a>
+                            <button class="btn btn-small btn-secondary view-project-btn" data-project="weather"><i class="fas fa-info-circle"></i> Specs</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -696,9 +787,48 @@
             <i class="fas fa-arrow-up"></i>
         </a>
     </footer>
-    <noscript>
-        <p>Shreyansh Yadav is a Full Stack Software Developer from Sultanpur, Uttar Pradesh, India. He specializes in React.js, Node.js, Python, MongoDB, and MERN Stack development. Contact: shreyansh00102@gmail.com | +91 70077 06755. B.Tech Computer Science at KNIPSS Sultanpur.</p>
-    </noscript>
+    <!-- Interactive Project Details Modal -->
+    <div id="projectModal" class="project-modal">
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-dialog glass-card">
+            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Modal">&times;</button>
+            <div class="modal-header">
+                <span class="modal-badge" id="modalCategory">Category</span>
+                <h3 id="modalTitle">Project Title</h3>
+            </div>
+            <div class="modal-body">
+                <div class="modal-preview-banner" id="modalBanner">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <p class="modal-desc" id="modalDesc">Detailed description of the project...</p>
+                
+                <div class="modal-section">
+                    <h4><i class="fas fa-check-circle"></i> Key Technical Highlights</h4>
+                    <ul class="modal-highlights" id="modalHighlights"></ul>
+                </div>
+
+                <div class="modal-section">
+                    <h4><i class="fas fa-microchip"></i> Technologies & Architecture</h4>
+                    <div class="tags" id="modalTags"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" id="modalLiveLink" class="btn btn-primary" target="_blank">Launch App <i class="fas fa-external-link-alt"></i></a>
+                <a href="https://github.com/shreyansh00102" class="btn btn-secondary" target="_blank">View GitHub <i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <!-- Circular Scroll Progress & Back to Top Floating Button -->
+    <div class="scroll-progress-wrap" id="scrollProgressWrap">
+        <svg class="scroll-progress-svg" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+        <i class="fas fa-arrow-up"></i>
+    </div>
 
     <script src="script.js"></script>
 </body>
