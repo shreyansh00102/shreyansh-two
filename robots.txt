@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /assets/Shreyansh_Yadav_Resume.pdf
 
 User-agent: Googlebot
 Allow: /

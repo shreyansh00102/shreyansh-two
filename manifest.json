@@ -1,11 +1,11 @@
 {
-    "name": "Shreyansh Yadav | Full Stack Developer Sultanpur",
-    "short_name": "Shreyansh",
-    "description": "Shreyansh Yadav - Best Full Stack Software Developer in Sultanpur, Uttar Pradesh, India. React, Node.js, Python, MongoDB expert.",
+    "name": "Shreyansh Yadav | Full Stack Developer & Software Engineer",
+    "short_name": "Shreyansh Yadav",
+    "description": "Official Website of Shreyansh Yadav - Full Stack Software Developer in Sultanpur, Uttar Pradesh. Expert in React, Node.js, Python, MongoDB.",
     "start_url": "/",
     "display": "standalone",
-    "background_color": "#0a0a0f",
-    "theme_color": "#ea580c",
+    "background_color": "#070913",
+    "theme_color": "#070913",
     "orientation": "portrait-primary",
     "icons": [
         {
@@ -15,7 +15,7 @@
             "purpose": "any maskable"
         }
     ],
-    "categories": ["portfolio", "developer", "web development"],
+    "categories": ["portfolio", "developer", "technology"],
     "lang": "en-IN",
     "dir": "ltr"
 }

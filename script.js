@@ -393,4 +393,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         animateParticles();
     }
+
+    // 14. FAQ Accordion Toggle Interaction
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            const isOpen = faqItem.classList.contains('active');
+
+            // Close all open FAQs for clean accordion feel
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                const btn = item.querySelector('.faq-question');
+                if (btn) btn.setAttribute('aria-expanded', 'false');
+            });
+
+            // If not previously open, open current FAQ
+            if (!isOpen) {
+                faqItem.classList.add('active');
+                question.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
 });
+
