@@ -26,4 +26,3 @@ User-agent: LinkedInBot
 Allow: /
 
 Sitemap: https://shreyansh-two.vercel.app/sitemap.xml
-
