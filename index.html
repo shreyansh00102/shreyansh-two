@@ -831,20 +831,21 @@
 
                     <div class="contact-form glass-card reveal">
                         <form id="contactForm">
+                            <input type="hidden" name="access_key" value="458c7894-4f18-4f4a-b4d4-cc8454bf2529">
                             <div class="input-group">
-                                <input type="text" id="name" class="input-field" placeholder=" " required>
+                                <input type="text" id="name" name="name" class="input-field" placeholder=" " required>
                                 <label for="name" class="input-label">Your Name</label>
                             </div>
                             <div class="input-group">
-                                <input type="email" id="email" class="input-field" placeholder=" " required>
+                                <input type="email" id="email" name="email" class="input-field" placeholder=" " required>
                                 <label for="email" class="input-label">Your Email</label>
                             </div>
                             <div class="input-group">
-                                <textarea id="message" rows="5" class="input-field" placeholder=" " required></textarea>
+                                <textarea id="message" name="message" rows="5" class="input-field" placeholder=" " required></textarea>
                                 <label for="message" class="input-label">Your Message</label>
                             </div>
                             <button type="submit" class="btn btn-primary" style="width: 100%;">
-                                Send via WhatsApp <i class="fab fa-whatsapp"></i>
+                                Send Message <i class="fas fa-paper-plane"></i>
                             </button>
                         </form>
                     </div>

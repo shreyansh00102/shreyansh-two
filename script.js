@@ -240,10 +240,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3500);
     };
 
-    // 10. Contact Form WhatsApp Submission
+    // 10. Contact Form Submission (Web3Forms API + Direct Email Delivery)
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = contactForm.querySelector('button');
             const originalContent = btn.innerHTML;
@@ -252,28 +252,56 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = document.getElementById('email').value;
             const message = document.getElementById('message').value;
 
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing WhatsApp...';
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending Message...';
             btn.disabled = true;
 
-            const phoneNumber = "917007706755";
-            const waText = `*Portfolio Contact Inquiry*\n\n` +
-                           `👤 *Name:* ${name}\n` +
-                           `📧 *Email:* ${email}\n` +
-                           `💬 *Message:* ${message}`;
+            const apiKey = "458c7894-4f18-4f4a-b4d4-cc8454bf2529";
 
-            const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(waText)}`;
+            try {
+                const response = await fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json"
+                    },
+                    body: JSON.stringify({
+                        access_key: apiKey,
+                        name: name,
+                        email: email,
+                        message: message,
+                        subject: `New Portfolio Message from ${name}`,
+                        from_name: name
+                    })
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    btn.innerHTML = '<i class="fas fa-check"></i> Sent Successfully!';
+                    btn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+                    if (window.showToast) window.showToast("Message sent! Shreyansh will respond to your email soon.");
+                    contactForm.reset();
+                } else {
+                    // Fallback: Send via Web3Forms non-hyphenated key or WhatsApp
+                    const waText = `*Portfolio Contact Inquiry*\n\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n💬 *Message:* ${message}`;
+                    window.open(`https://wa.me/917007706755?text=${encodeURIComponent(waText)}`, '_blank');
+                    btn.innerHTML = '<i class="fab fa-whatsapp"></i> Sent via WhatsApp';
+                    if (window.showToast) window.showToast("Message prepared in WhatsApp...");
+                    contactForm.reset();
+                }
+            } catch (error) {
+                const waText = `*Portfolio Contact Inquiry*\n\n👤 *Name:* ${name}\n📧 *Email:* ${email}\n💬 *Message:* ${message}`;
+                window.open(`https://wa.me/917007706755?text=${encodeURIComponent(waText)}`, '_blank');
+                btn.innerHTML = '<i class="fab fa-whatsapp"></i> Sent via WhatsApp';
+                if (window.showToast) window.showToast("Message prepared in WhatsApp...");
+                contactForm.reset();
+            }
 
             setTimeout(() => {
-                window.open(waUrl, '_blank');
-                btn.innerHTML = '<i class="fas fa-check"></i> Redirected!';
-                showToast("Opening WhatsApp with your message details...");
-                contactForm.reset();
-
-                setTimeout(() => {
-                    btn.innerHTML = originalContent;
-                    btn.disabled = false;
-                }, 3000);
-            }, 800);
+                btn.innerHTML = originalContent;
+                btn.style.background = '';
+                btn.disabled = false;
+            }, 4000);
         });
     }
 
